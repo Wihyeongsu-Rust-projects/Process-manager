@@ -1,3 +1,10 @@
+use std::env;
+
+#[tauri::command]
+fn os_name() -> &'static str {
+    env::consts::OS
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
